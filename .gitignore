@@ -29,7 +29,6 @@ build/Release
 
 # Compiled output
 dist
-lib
 
 # Dependency directories
 node_modules
