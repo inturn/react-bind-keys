@@ -4776,10 +4776,10 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-use-passive-reducer@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-use-passive-reducer/-/react-use-passive-reducer-0.1.0.tgz#bb33ad5701eeed41479e6a362a9d7930219a920b"
-  integrity sha512-LAAArnH/h4OdMZ+V2rKmzMya/9IUUla/voRb4so3lJf6RLFOYQxkPSpB8/73HAWON9odnDZzJu0hcqqVbDTIdg==
+react-use-passive-reducer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-use-passive-reducer/-/react-use-passive-reducer-0.1.1.tgz#297b90f69b809a80b89ad74d8d053f81018f2af7"
+  integrity sha512-CudInvQSRNJR/BRTQ4n4HUiAdxn2rtjuSmgN+NutaiDDfJTLhOmkQIFTpZO8YuYsv34dUOXMm6QC+7aUbawQXg==
 
 react@^16.13.1:
   version "16.13.1"

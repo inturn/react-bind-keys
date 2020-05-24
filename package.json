@@ -70,6 +70,6 @@
     "react": "^16.8.4"
   },
   "dependencies": {
-    "react-use-passive-reducer": "^0.1.0"
+    "react-use-passive-reducer": "^0.1.1"
   }
 }
