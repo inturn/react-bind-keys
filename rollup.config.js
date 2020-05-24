@@ -11,11 +11,6 @@ export default {
       name: 'usePassiveReducer',
       exports: 'named',
     },
-    {
-      format: 'es',
-      file: pkg.module,
-      name: 'usePassiveReducer',
-    },
   ],
   plugins: [typescript({ useTsconfigDeclarationDir: true })],
   external: ['react'],

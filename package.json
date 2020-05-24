@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "A react hook for binding hot-keys",
   "main": "dist/react-use-bind-keys.js",
-  "module": "dist/react-use-bind-keys.ejs",
   "types": "dist/types/index.d.ts",
   "repository": "github.com/inturn/react-use-bind-keys",
   "author": "INTURN",

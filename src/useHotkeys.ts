@@ -17,7 +17,7 @@ export default function(
     keyHandlers,
     preventDefault,
   }: {
-    keyHandlers: { [key: string]: any };
+    keyHandlers: { [key: string]: (event: KeyboardEvent) => any };
     keyMap: {
       [key: string]: string[];
     };
