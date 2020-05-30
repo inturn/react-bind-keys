@@ -59,6 +59,12 @@ export default function(
     };
 
     const handleKeyUp = (evt: KeyboardEvent): void => {
+      if (evt.key === 'Meta') {
+        return dispatch({
+          type: ActionType.SwallowSequence,
+        });
+      }
+
       dispatch({
         type: ActionType.Keyup,
         payload: evt,

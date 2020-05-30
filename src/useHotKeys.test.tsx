@@ -9,6 +9,7 @@ describe('useTableHotkeys()', () => {
     MOVE_RIGHT: ['arrowright', 'tab'],
     MOVE_DOWN: ['arrowdown'],
     MOVE_UP: ['arrowup'],
+    MUTE: ['meta+e', 'e+meta'],
   };
 
   let keyHandlers = {
@@ -16,6 +17,7 @@ describe('useTableHotkeys()', () => {
     MOVE_RIGHT: jest.fn(),
     MOVE_DOWN: jest.fn(),
     MOVE_UP: jest.fn(),
+    MUTE: jest.fn(),
   };
 
   afterEach(() => {
@@ -25,6 +27,7 @@ describe('useTableHotkeys()', () => {
       MOVE_RIGHT: jest.fn(),
       MOVE_DOWN: jest.fn(),
       MOVE_UP: jest.fn(),
+      MUTE: jest.fn(),
     };
   });
 
@@ -60,6 +63,8 @@ describe('useTableHotkeys()', () => {
   it('calls the handler for a combination keypress', () => {
     const { getByTestId } = render(<Test />);
     fireEvent.keyDown(getByTestId('test'), { key: 'Shift' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'E' });
+    fireEvent.keyUp(getByTestId('test'), { key: 'E' });
     fireEvent.keyDown(getByTestId('test'), { key: 'Tab' });
 
     expect(keyHandlers.MOVE_LEFT).toHaveBeenCalledTimes(1);
@@ -102,5 +107,15 @@ describe('useTableHotkeys()', () => {
 
     expect(keyHandlers.MOVE_LEFT).toHaveBeenCalledTimes(0);
     expect(keyHandlers.MOVE_RIGHT).toHaveBeenCalledTimes(1);
+  });
+  it('properly swallows the sequence when meta is hit', () => {
+    const { getByTestId } = render(<Test />);
+    fireEvent.keyDown(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'F' });
+    fireEvent.keyUp(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'E' });
+
+    expect(keyHandlers.MUTE).toHaveBeenCalledTimes(1);
   });
 });
