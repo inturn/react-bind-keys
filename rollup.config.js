@@ -8,7 +8,7 @@ export default {
     {
       format: 'cjs',
       file: pkg.main,
-      name: 'usePassiveReducer',
+      name: 'useBindKeys',
       exports: 'named',
     },
   ],
