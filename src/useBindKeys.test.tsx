@@ -118,4 +118,14 @@ describe('useTableHotkeys()', () => {
 
     expect(keyHandlers.MUTE).toHaveBeenCalledTimes(1);
   });
+  it('properly swallows the sequence when focus is lost', () => {
+    const { getByTestId } = render(<Test />);
+    fireEvent.keyDown(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'F' });
+    fireEvent.blur(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'Meta' });
+    fireEvent.keyDown(getByTestId('test'), { key: 'E' });
+
+    expect(keyHandlers.MUTE).toHaveBeenCalledTimes(1);
+  });
 });
