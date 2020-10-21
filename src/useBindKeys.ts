@@ -52,10 +52,14 @@ export default function(
 
   useEffect(() => {
     const handleKeyDown = (evt: KeyboardEvent): void => {
-      dispatch({
-        type: ActionType.Keydown,
-        payload: evt,
-      });
+      // Ensure that the event has a key. keydown was being triggered by
+      // autocomplete.
+      if (evt.key) {
+        dispatch({
+          type: ActionType.Keydown,
+          payload: evt,
+        });
+      }
     };
 
     const handleKeyUp = (evt: KeyboardEvent): void => {
@@ -65,10 +69,14 @@ export default function(
         });
       }
 
-      dispatch({
-        type: ActionType.Keyup,
-        payload: evt,
-      });
+      // Ensure that the event has a key. keyup was being triggered by
+      // autocomplete.
+      if (evt.key) {
+        dispatch({
+          type: ActionType.Keyup,
+          payload: evt,
+        });
+      }
     };
 
     if (ref.current) {
