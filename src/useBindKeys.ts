@@ -79,16 +79,24 @@ export default function(
       }
     };
 
+    const handleBlur = (): void => {
+      return dispatch({
+        type: ActionType.SwallowSequence,
+      });
+    };
+
     if (ref.current) {
       ref.current.tabIndex = -1;
       ref.current.addEventListener('keyup', handleKeyUp);
       ref.current.addEventListener('keydown', handleKeyDown);
+      ref.current.addEventListener('blur', handleBlur);
     }
 
     return (): void => {
       if (ref.current) {
         ref.current.removeEventListener('keyup', handleKeyUp);
         ref.current.removeEventListener('keydown', handleKeyDown);
+        ref.current.removeEventListener('blur', handleBlur);
       }
     };
   }, [ref, dispatch]);
