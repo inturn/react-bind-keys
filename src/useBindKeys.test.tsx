@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import React, { useRef } from 'react';
 
-import useHotkeys from './useHotkeys';
+import useBindKeys from './useBindKeys';
 
 describe('useTableHotkeys()', () => {
   const keyMap = {
@@ -40,7 +40,7 @@ describe('useTableHotkeys()', () => {
   }): React.ReactElement {
     const keyWrapperRef = useRef(null);
 
-    useHotkeys(keyWrapperRef, {
+    useBindKeys(keyWrapperRef, {
       keyMap,
       keyHandlers,
       preventDefault,

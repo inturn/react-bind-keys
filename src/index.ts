@@ -1,1 +1,1 @@
-export { default } from './useHotkeys';
+export { default } from './useBindKeys';
