@@ -17,6 +17,7 @@
   ],
   "rules": {
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "react/prop-types": [0],
     "@typescript-eslint/no-explicit-any": [0],
     "prettier/prettier": "error",
     "simple-import-sort/sort": "error",
