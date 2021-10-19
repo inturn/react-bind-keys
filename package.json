@@ -2,7 +2,7 @@
   "name": "react-bind-keys",
   "version": "0.0.6",
   "description": "A react hook for binding hot-keys",
-  "main": "dist/react-use-bind-keys.js",
+  "main": "dist/react-bind-keys.min.js",
   "types": "dist/types/index.d.ts",
   "repository": "github.com/inturn/react-use-bind-keys",
   "author": "INTURN",
@@ -13,7 +13,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "yarn clean && yarn rollup -c rollup.config.js",
+    "build": "yarn clean && NODE_ENV=production yarn rollup -c rollup.config.js",
     "clean": "rm -rf dist",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint --fix",
@@ -52,6 +52,7 @@
     "react-dom": "^16.13.1",
     "rollup": "^1.31.1",
     "rollup-plugin-typescript2": "^0.20.1",
+    "rollup-plugin-uglify": "^6.0.4",
     "standard-version": "^8.0.1",
     "ts-jest": "^25.3.0",
     "typescript": "^3.4.5"

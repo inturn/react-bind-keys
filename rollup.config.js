@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
+import { uglify } from 'rollup-plugin-uglify';
 
 import pkg from './package.json';
 
@@ -8,10 +9,13 @@ export default {
     {
       format: 'cjs',
       file: pkg.main,
-      name: 'useBindKeys',
+      name: 'BindKeys',
       exports: 'named',
     },
   ],
-  plugins: [typescript({ useTsconfigDeclarationDir: true })],
+  plugins: [
+    typescript({ useTsconfigDeclarationDir: true }),
+    process.env.NODE_ENV === 'production' && uglify(),
+  ],
   external: ['react'],
 };
