@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](///compare/v0.0.5...v0.0.6) (2021-10-19)
+
+### Features
+
+- rewrite to be commponent instead of hook ([ce7c597](///commit/ce7c597f56417f38f24d213acc6b9bcbb64a1e7e))
+
+### Bug Fixes
+
+- resolve issues with portals and valid elements ([a914ffc](///commit/a914ffce678a674046ed9ab5246d03dc308d58b8))
+
 ### [0.0.5](///compare/v0.0.4...v0.0.5) (2020-10-21)
 
 ### Bug Fixes
