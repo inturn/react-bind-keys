@@ -1,15 +1,17 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
+import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 
 import BindKeys from './BindKeys';
 
 const keyHandlers = {
-  MOVE_LEFT: () => console.log('left'),
-  MOVE_RIGHT: () => console.log('right'),
-  MOVE_DOWN: () => console.log('down'),
-  MOVE_UP: () => console.log('up'),
-  MUTE: () => console.log('mute'),
+  MOVE_LEFT: action('move-left'),
+  MOVE_RIGHT: action('move-right'),
+  MOVE_DOWN: action('move-down'),
+  MOVE_UP: action('move-up'),
+  MUTE: action('mute'),
 };
 const keyMap = {
   MOVE_LEFT: ['arrowleft', 'shift+tab'],
@@ -23,36 +25,53 @@ export default {
   title: 'BindKeys',
   component: BindKeys,
   parameters: {
-    keyMap,
-    keyHandlers,
     layout: 'fullscreen',
   },
 } as Meta;
 
-const Template: Story<{ children: React.ReactNode }> = ({ children }) => {
+const Child = () => (
+  <input
+    tabIndex={-1}
+    style={{
+      display: 'flex',
+    }}
+  />
+);
+
+export const Default: Story = () => {
   return (
     <BindKeys keyMap={keyMap} keyHandlers={keyHandlers}>
-      {children}
+      <Child />
     </BindKeys>
   );
 };
 
-const Child = () => (
-  <div
-    tabIndex={-1}
-    style={{
-      display: 'flex',
-      width: '300px',
-      height: '300px',
-    }}
-  />
-);
-export const SingleChild = Template.bind({});
-SingleChild.args = {
-  children: <Child />,
-};
+function Modal({ children }: { children: React.ReactNode }) {
+  const el = useRef(document.createElement('div'));
+  const modalRoot = document.getElementById('root');
 
-export const MultipleChildren = Template.bind({});
-MultipleChildren.args = {
-  children: [<Child key={0} />, <Child key={1} />],
+  useEffect(() => {
+    if (modalRoot) {
+      modalRoot.appendChild(el.current);
+    }
+    return () => {
+      if (modalRoot) {
+        modalRoot.removeChild(el.current);
+      }
+    };
+  }, []);
+
+  return ReactDOM.createPortal(children, el.current);
+}
+
+export const Portal: Story = () => {
+  return (
+    <div id="hi">
+      <BindKeys keyMap={keyMap} keyHandlers={keyHandlers}>
+        <Modal>
+          <Child />
+        </Modal>
+      </BindKeys>
+    </div>
+  );
 };

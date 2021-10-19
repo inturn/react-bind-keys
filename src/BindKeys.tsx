@@ -21,31 +21,6 @@ export default function BindKeys({
     preventDefault,
   });
 
-  if (React.isValidElement(children)) {
-    const props = {
-      onKeyUp: (evt: React.KeyboardEvent): void => {
-        handleKeyUp(evt);
-        if (children.props.onKeyUp) {
-          children.props?.onKeyUp(evt);
-        }
-      },
-      onKeyDown: (evt: React.KeyboardEvent): void => {
-        handleKeyDown(evt);
-        if (children.props.onKeyDown) {
-          children.props.onKeyDown(evt);
-        }
-      },
-      onBlur: (evt: React.FocusEvent): void => {
-        handleBlur(evt);
-        if (children.props.onBlur) {
-          children.props.onBlur(evt);
-        }
-      },
-    };
-
-    return React.cloneElement(children, props);
-  }
-
   return (
     <div onKeyUp={handleKeyUp} onKeyDown={handleKeyDown} onBlur={handleBlur}>
       {children}
