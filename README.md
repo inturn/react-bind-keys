@@ -31,8 +31,8 @@ export default function MyComponent({ children }) {
 }
 ```
 
-## Fature Checklist
+## Feature Checklist
 
-[x] - proper event propogation with portals
-[ ] - allow binding to window
-[ ] - add debugging logs and hook debuger
+- [x] proper event propogation with portals
+- [ ] allow binding to window
+- [ ] add debugging logs and hook debuger
