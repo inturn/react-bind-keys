@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](/github.com/inturn/react-use-bind-keys/compare/v0.0.5...v0.0.7) (2022-02-15)
+
+### Features
+
+- rewrite to be commponent instead of hook ([f7825bf](/github.com/inturn/react-use-bind-keys/commit/f7825bf3507c84c495e2c3ac991baf989a0b01ff))
+
+### Bug Fixes
+
+- resolve issues with portals and valid elements ([87779e3](/github.com/inturn/react-use-bind-keys/commit/87779e3e4165d41f97d4b13d3498c143c89f6cf3))
+
 ### [0.0.6](///compare/v0.0.5...v0.0.6) (2021-10-19)
 
 ### Features
