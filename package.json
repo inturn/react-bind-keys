@@ -1,6 +1,6 @@
 {
   "name": "react-bind-keys",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A react hook for binding hot-keys",
   "main": "dist/react-bind-keys.min.js",
   "types": "dist/types/index.d.ts",
