@@ -11068,10 +11068,10 @@ react-textarea-autosize@^8.3.0:
     use-composed-ref "^1.0.0"
     use-latest "^1.0.0"
 
-react-use-passive-reducer@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-use-passive-reducer/-/react-use-passive-reducer-0.1.1.tgz#297b90f69b809a80b89ad74d8d053f81018f2af7"
-  integrity sha512-CudInvQSRNJR/BRTQ4n4HUiAdxn2rtjuSmgN+NutaiDDfJTLhOmkQIFTpZO8YuYsv34dUOXMm6QC+7aUbawQXg==
+react-use-passive-reducer@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-use-passive-reducer/-/react-use-passive-reducer-0.1.2.tgz#4434e1d39be22f134d478b9d0772a9582f9f1e41"
+  integrity sha512-5QbGtUAUNQ2uBRDSM289am/QLsK/UYI/SfD4jCYfPLc1CBTE8EY/duROu1J/E97LS8+U/B3QIk+25LdXv1b/Ig==
 
 react@^16.13.1:
   version "16.13.1"
